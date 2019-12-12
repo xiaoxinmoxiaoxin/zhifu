@@ -1,13 +1,24 @@
+server:
+  port: 8899
 spring:
   application:
-    name: eureka-server
-server:
-  port: 7000
+    name: e-pzzx
 eureka:
-  instance:
-    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+        defaultZone: http://localhost:7000/eureka/
+cloud:
+  config:
+    server:
+      git:
+
+        uri: https://github.com/xiaoxinmoxiaoxin/zhifu # 配置git仓库的地址
+        search-paths: test # git仓库地址下的相对地址，可以配置多个，用,分割。
+        username: 1848239485@qq.com
+        password: duxingyin521521
+
+
+
+
